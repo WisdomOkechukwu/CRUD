@@ -35,6 +35,7 @@ $result = $newTask->DBShow();
         <div class="row">
         
             <div class="col-md-7 offset-md-3">
+                <!---------------------------------UPDATE SECTION------------------------------------->
 
             <?php if(isset($_SESSION['Update_state']) && $_SESSION['Update_state'] == "Done"){?>
                 <div class="text-center">
@@ -51,8 +52,10 @@ $result = $newTask->DBShow();
                     </button>
                     
                 </div>
+                <!---------------------------------UPDATE SECTION END------------------------------------->
             <?php }else{?>
 
+                <!---------------------------------CREATE SECTION------------------------------------------>
                 <div class="text-center">
                     <h5>Add Task</h5>
                 </div>
@@ -61,10 +64,11 @@ $result = $newTask->DBShow();
                     <button class="btn btn-outline-success" name="taskAdder" type="submit" id="button-addon2">Add Task</button>
                 </div>
                 <?php }
+                
                 $_SESSION['Update_state'] = ""?>
                 
                 <?php 
-                    if($_SESSION['Created_Task_session'] == "Done"){
+                    if(isset($_SESSION['Created_Task_session']) && $_SESSION['Created_Task_session'] == "Done"){
                     
                     ?>
                     <div class="alert alert-success d-flex align-items-center" role="alert">
@@ -75,9 +79,13 @@ $result = $newTask->DBShow();
                     </div>
                 <?php }
                 $_SESSION['Created_Task_session'] = "";?>
+                <!---------------------------------cREATE SECTION END---------------------------------------->
+
+
+                <!---------------------------------DELETE SECTION -------------------------------------------->
 
                 <?php   
-                    if($_SESSION['Deleted_Task_session'] == "Done"){
+                    if(isset($_SESSION['Deleted_Task_session']) && $_SESSION['Deleted_Task_session'] == "Done"){
                     
                     ?>
                     <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -89,6 +97,11 @@ $result = $newTask->DBShow();
                 <?php }
                 $_SESSION['Deleted_Task_session'] = "";?>
 
+
+                <!---------------------------------DELETE SECTION END---------------------------------------->
+
+
+                <!---------------------------------UPDATE ALERT SECTION---------------------------------------->
                 <?php   
                     if(isset($_SESSION['update_state']) && $_SESSION['update_state'] == "Done"){
                     
@@ -101,6 +114,7 @@ $result = $newTask->DBShow();
                     </div>
                 <?php }
                 $_SESSION['update_state'] = "";?>
+                <!---------------------------------UPDATE ALERT SECTION END-------------------------------------->
             </div>
             
         </div>
@@ -122,6 +136,7 @@ $result = $newTask->DBShow();
                         </tr>
                     </thead>
                     <tbody >
+                        <!-- ----------------------LOADING DATA IN DATABASE----------------------------------- -->
                    <?php foreach ($result as $key => $value) {
                             ?> 
                         <tr>
@@ -138,6 +153,7 @@ $result = $newTask->DBShow();
 
                         </tr>
                         <?php } ?>
+                        <!-- ----------------------LOADING DATA IN DATABASE END----------------------------------- -->
                     </tbody>
                 </table>
             </div>

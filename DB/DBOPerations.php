@@ -1,6 +1,7 @@
 <?php 
 require_once 'DB.php';
 
+//?DBoperations inherits the function from DB class to get the connection to the Database
 class DBoperations extends DB
 {
     public function __construct()
@@ -14,9 +15,11 @@ class DBoperations extends DB
             $connection = $this->DBConnectionInitializer();
             $sql = "SELECT * FROM task ORDER BY id DESC";
             
+            //? Execute Query
             $statement = $connection->query($sql);
             $statement->execute();
 
+            //? setting the output as an associative array
             $result = $statement->fetchAll();
 
             return $result;

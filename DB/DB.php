@@ -1,10 +1,17 @@
 <?php 
 
 class DB{
-    private $DBhost= "us-cdbr-east-04.cleardb.com";
-    private $DBusername = "bfc4260e5bde9b";
-    private $DBpass = "3aba201e";
-    private $DBname = "heroku_aca4a7177be583b";
+    //?LocalHost Configuration
+    private $DBhost= "localhost";
+    private $DBusername = "root";
+    private $DBpass = "";
+    private $DBname = "todocrud";
+
+    //? Heroku DB Configuration
+    // private $DBhost= "us-cdbr-east-04.cleardb.com";
+    // private $DBusername = "bfc4260e5bde9b";
+    // private $DBpass = "3aba201e";
+    // private $DBname = "heroku_aca4a7177be583b";
 
     public function DBConnectionInitializer()
     {
@@ -18,7 +25,7 @@ class DB{
 
     public function DBErrorCatcher()
     {
-        //? Using the try and catch
+        //? Using the try and catch to find errors
         try{
             $this->DBConnectionInitializer();
             return "Connection Successfully";

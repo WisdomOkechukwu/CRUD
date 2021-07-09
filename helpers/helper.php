@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     //? Adding Task To database
     if(isset($_POST["taskAdder"])):
         $taskData = $_POST['taskValue'];
+        
+        //? Instead of using ID value which poses security risk instead use a RandomString for more secure identification
         $RandomString =  makeRandomString(29);
         
         $status =  $newTask->DBInsertion($taskData,$RandomString);
