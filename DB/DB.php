@@ -1,7 +1,7 @@
 <?php 
 
 class DB{
-    private $DBhost= "us-cdbr-east-04.cleardb.co";
+    private $DBhost= "us-cdbr-east-04.cleardb.com";
     private $DBusername = "bfc4260e5bde9b";
     private $DBpass = "3aba201e";
     private $DBname = "heroku_aca4a7177be583b";
