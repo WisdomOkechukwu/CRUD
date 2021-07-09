@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2021 at 10:48 AM
+-- Generation Time: Jul 09, 2021 at 11:30 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -26,21 +26,13 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `task`
 --
+CREATE DATABASE `todocrud`;
 
 CREATE TABLE `task` (
   `id` int(11) NOT NULL,
   `task` varchar(255) NOT NULL,
   `random` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `task`
---
-
-INSERT INTO `task` (`id`, `task`, `random`) VALUES
-(34, 'qegtwergwe', 'PEiFa6u7Z3qCh6tfpOc7JXyxecl6hF'),
-(35, 'avsas', 'mJFm9kOjOAliPi48t0aAy7XYluG36x'),
-(37, 'the understanding of Faith the key to  greatness ths', 'h3WsncOI5sshwxhDtPMEGyVigT9fuf');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +52,7 @@ ALTER TABLE `task`
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
